@@ -18,6 +18,7 @@ router.post('/login', (req, res) => {
         req.session.user = data.username
         res.redirect('/home')
       } else {
+        req.flash('info', 'Maaf, Anda tidak dapat mengakses halaman yang Anda tuju!');
         res.redirect('/')
       }
     } else {

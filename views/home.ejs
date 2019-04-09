@@ -29,14 +29,15 @@
 
 <body>
   <div class="container p-5">
+    <form class="" action="/logout" method="post">
+      <button class="" type="submit" name="button">logout</button>
+    </form>
     <h2>
       hallo
       <%= myname %>
     </h2>
 
-    <form class="" action="/logout" method="post">
-      <button class="" type="submit" name="button">logout</button>
-    </form>
+
 
     <form class="tanya" action="/quest" method="post" id="areaform">
       <textarea name="question" class="form-control" rows="8" cols="80" form="areaform"></textarea><br>
@@ -90,7 +91,9 @@
           <%for (tanya of dataMe){%>
           <div class="bg-light p-3 my-3">
             <br>
-            <%= tanya.question %> <br>
+            <b>
+              <%= tanya.question %> <br>
+            </b>
             <% for (ans of tanya.Answers ){%>
             <b><%= ans.User.username.toUpperCase() %></b> :
             <%= ans.answer %> <br>
